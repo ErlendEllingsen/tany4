@@ -70,31 +70,37 @@ $version: 'y2d4pi'
 		width: 33%
 		display: inline-block
 		vertical-align: top
-	a.icon
-		//display: block
-		font-size: 55px
-
-		&.icon-profile
-			color: $cvGray
-		&.icon-linkedin2
-			color: $linkedInBlue
-		&.icon-github
-			color: $githubPurple
-		&.icon-stackoverflow
-			color: $stackOverflowOrange
-		&.icon-envelop
-			color: $googleRed
-		label
-			display: block
-			font-size: 15px
-			// margin-left: 15px
-			color: black
-			cursor: pointer
-			// position: absolute
-			// top: 10px
-			width: 100px
-			margin: 10px auto
-			line-height: 1.3
+		a.icon
+			font-size: 55px
+			&.icon-profile
+				color: lighten($cvGray, 10%)
+			&.icon-linkedin2
+				color: desaturate($linkedInBlue, $desaturate)
+			&.icon-github
+				color: desaturate($githubPurple, $desaturate)
+			&.icon-stackoverflow
+				color: desaturate($stackOverflowOrange, $desaturate)
+			&.icon-envelop
+				color: desaturate($googleRed, $desaturate)
+			label
+				display: block
+				font-size: 15px
+				color: black
+				cursor: pointer
+				width: 125px
+				margin: 10px auto
+				line-height: 1.3
+		&:hover
+			.icon-profile
+				color: $cvGray !important
+			.icon-linkedin2
+				color: $linkedInBlue !important
+			.icon-github
+				color: $githubPurple !important
+			.icon-stackoverflow
+				color: $stackOverflowOrange !important
+			.icon-envelop
+				color: $googleRed !important
 	@include breakpoint(phablet)
 		.links
 			width: 80%
