@@ -17,7 +17,7 @@ $icomoon-version: 'v5icks'
     border-color: #ffe070
 	padding: 10px
 
-.rainbow
+%rainbow
   background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #ef639a), color-stop(0.2, #ef639a), color-stop(0.4, #a479b4), color-stop(0.6, #a479b4), color-stop(0.7, #8b008b),color-stop(0.8, #8b008b), color-stop(1, #ef639a) )
   background-image: gradient( linear, left top, right top, color-stop(0, #ef639a), color-stop(0.2, #ef639a), color-stop(0.4, #a479b4), color-stop(0.6, #a479b4), color-stop(0.7, #8b008b),color-stop(0.8, #8b008b), color-stop(1, #ef639a) )
   color: transparent
@@ -73,32 +73,48 @@ $icomoon-version: 'v5icks'
 		display: inline-block
 		vertical-align: top
 	a.icon
-		//display: block
 		font-size: 55px
-
-		&.icon-profile
-			color: $cvGray
-		&.icon-linkedin2
-			color: $linkedInBlue
-		&.icon-github
-			color: $githubPurple
-		&.icon-stackoverflow
-			color: $stackOverflowOrange
-		&.icon-envelop
-			color: $envelopTeal
-		&.icon-gitlab
-			color: $gitlabOrange
 		label
 			display: block
 			font-size: 15px
-			// margin-left: 15px
 			color: black
 			cursor: pointer
-			// position: absolute
-			// top: 10px
 			width: 100px
 			margin: 10px auto
 			line-height: 1.3
+		&.icon-profile
+			color: rgba( $cvGray, .8 )
+			&:hover
+				&, label
+					color: $cvGray
+		&.icon-linkedin2
+			color: desaturate( $linkedInBlue, 40% )
+			&:hover
+				&, label
+					color: $linkedInBlue
+		&.icon-github
+			color: desaturate( $githubPurple, 10% )
+			&:hover
+				&, label
+					color: $githubPurple
+				.rainbow
+					@extend %rainbow
+		&.icon-stackoverflow
+			color: desaturate( $stackOverflowOrange, 40% )
+			&:hover
+				&, label
+					color: $stackOverflowOrange
+		&.icon-envelop
+			color: desaturate( $envelopTeal, 30% )
+			&:hover
+				&, label
+					color: $envelopTeal
+		&.icon-gitlab
+			color: desaturate( $gitlabOrange, 30% )
+			&:hover
+				&, label
+					color: $gitlabOrange
+
 	@include breakpoint(phablet)
 		.links
 			width: 80%
